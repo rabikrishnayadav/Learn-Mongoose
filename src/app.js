@@ -41,3 +41,24 @@ where as a mongoose model provides an interface to the database for creating, qu
 
 // collection creation
 const Playlist = new mongoose.model("Playlist", playlistSchema);
+
+// create or insert documents
+
+const createDocument = async () => {
+    try{
+        const reactPlaylist = new Playlist({
+        name: 'Node JS',
+        ctype: 'Back End',
+        videos: 55,
+        author: 'Rabi Kr Yadav',
+        active: true,
+    })
+
+    const result = await reactPlaylist.save();
+    console.log(result);
+    }catch(err){
+        console.log(err);
+    }
+}
+
+createDocument();
