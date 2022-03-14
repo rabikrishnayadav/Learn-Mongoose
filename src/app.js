@@ -53,8 +53,37 @@ const createDocument = async () => {
         author: 'Rabi Kr Yadav',
         active: true,
     })
+    
+        const jsPlaylist = new Playlist({
+        name: 'JavaScript',
+        ctype: 'Front End',
+        videos: 59,
+        author: 'Rabi Kr Yadav',
+        active: true,
+    })
+        const mongoPlaylist = new Playlist({
+        name: 'MongoDB',
+        ctype: 'Database',
+        videos: 5,
+        author: 'Rabi Kr Yadav',
+        active: true,
+    })
+        const mongoosePlaylist = new Playlist({
+        name: 'MongooseDB',
+        ctype: 'Database',
+        videos: 15,
+        author: 'Rabi Kr Yadav',
+        active: true,
+    })
+        const expressPlaylist = new Playlist({
+        name: 'Express Js',
+        ctype: 'Back End',
+        videos: 15,
+        author: 'Rabi Kr Yadav',
+        active: true,
+    })
 
-    const result = await reactPlaylist.save();
+    const result = await Playlist.insertMany([reactPlaylist, jsPlaylist, mongoPlaylist, mongoosePlaylist, expressPlaylist]);
     console.log(result);
     }catch(err){
         console.log(err);
